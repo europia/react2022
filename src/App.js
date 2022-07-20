@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import './App.css';
 import Content from './components/content';
+import TOC from './components/toc';
 
 class App extends Component {
   constructor(props) {
@@ -15,13 +16,15 @@ class App extends Component {
     }
   }
 
-  return (
-    <div className="App">
-      안뇽 사랑해
-      <Content title="아침 인사" text="졸려졸려" />
-      
-    </div>
-  );
+  render () {
+    return (
+      <div className="App">
+        안뇽 사랑해
+        <Content title="아침 인사" text="졸려졸려" />
+        <TOC data={this.state.contents} />
+      </div>
+    )
+  }
 }
 
 export default App;
